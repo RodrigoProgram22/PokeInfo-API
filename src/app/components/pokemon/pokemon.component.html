@@ -1,0 +1,12 @@
+<h1>Detalles de Pikachu</h1>
+
+<div *ngIf="pokemonData">
+  <h2>{{ pokemonData.name }}</h2>
+  <img [src]="pokemonData.sprites.front_default" alt="Pikachu">
+  <p>Altura: {{ pokemonData.height }}</p>
+  <p>Peso: {{ pokemonData.weight }}</p>
+</div>
+
+<div *ngIf="!pokemonData">
+  <p>Cargando...</p>
+</div>
