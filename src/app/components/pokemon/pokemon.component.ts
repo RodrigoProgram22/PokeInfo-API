@@ -7,23 +7,30 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent implements OnInit {
-  pokemonData: any;
+  pokemonList: any;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getPokemonData();
+    this.getAllPokemon();
   }
 
-  getPokemonData() {
-    const apiUrl = 'https://pokeapi.co/api/v2/pokemon/pikachu';
+  getAllPokemon() {
+    const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=151'; // Cambia el límite según la cantidad de Pokémon que quieras mostrar
 
     this.http.get(apiUrl).subscribe((data: any) => {
-      this.pokemonData = data;
-      console.log(this.pokemonData)
+      this.pokemonList = data.results;
+      this.getPokemonDetails();
     }, error => {
       console.error('Error al obtener los datos:', error);
     });
   }
 
+  getPokemonDetails() {
+    for (const pokemon of this.pokemonList) {
+      this.http.get(pokemon.url).subscribe((details: any) => {
+        pokemon.details = details;
+      });
+    }
+  }
 }

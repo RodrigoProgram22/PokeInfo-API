@@ -1,12 +1,22 @@
-<h1>Detalles de Pikachu</h1>
+<h1>Lista de Pokémon</h1>
 
-<div *ngIf="pokemonData">
-  <h2>{{ pokemonData.name }}</h2>
-  <img [src]="pokemonData.sprites.front_default" alt="Pikachu">
-  <p>Altura: {{ pokemonData.height }}</p>
-  <p>Peso: {{ pokemonData.weight }}</p>
+<div *ngIf="pokemonList" class="d-flex flex-wrap">
+    <div *ngFor="let pokemon of pokemonList">
+        <div class="card mx-3 my-3" style="width: 13rem;">
+            <img *ngIf="pokemon.details?.sprites?.front_default"  [src]="pokemon.details.sprites.front_default" alt="{{ pokemon.name }}" class="card-img-top img-poke" alt="{{ pokemon.name }}">
+            <div class="card-body">
+                <h3>{{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}</h3>
+                <p>Altura: {{ pokemon.details?.height }}</p>
+                <p>Peso: {{ pokemon.details?.weight }}</p>
+                <p>Tipo(s):</p>
+                <ul>
+                    <li *ngFor="let type of pokemon.details?.types">{{ type.type.name }}</li>
+                </ul>
+            </div>
+          </div>
+    </div>
 </div>
 
-<div *ngIf="!pokemonData">
+<div *ngIf="!pokemonList">
   <p>Cargando...</p>
 </div>
