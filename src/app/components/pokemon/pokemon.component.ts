@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { PokemonService } from 'src/app/service/pokemon-api.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -7,18 +7,16 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./pokemon.component.css']
 })
 export class PokemonComponent implements OnInit {
-  pokemonList: any;
+  pokemonList: any[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private pokemonService: PokemonService) { }
 
   ngOnInit(): void {
     this.getAllPokemon();
   }
 
   getAllPokemon() {
-    const apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=151'; // Cambia el límite según la cantidad de Pokémon que quieras mostrar
-
-    this.http.get(apiUrl).subscribe((data: any) => {
+    this.pokemonService.getAllPokemon().subscribe((data: any) => {
       this.pokemonList = data.results;
       this.getPokemonDetails();
     }, error => {
@@ -28,7 +26,7 @@ export class PokemonComponent implements OnInit {
 
   getPokemonDetails() {
     for (const pokemon of this.pokemonList) {
-      this.http.get(pokemon.url).subscribe((details: any) => {
+      this.pokemonService.getPokemonDetails(pokemon.url).subscribe((details: any) => {
         pokemon.details = details;
       });
     }

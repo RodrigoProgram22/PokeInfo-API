@@ -7,10 +7,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link active" aria-current="page" routerLink="/inicio" >Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Otra pagina</a>
+            <a class="nav-link"  routerLink="/pokemon">Ver Todos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled">Versus</a>
@@ -23,4 +23,4 @@
       </div>
     </div>
   </nav>
-<app-pokemon></app-pokemon>
+  <router-outlet></router-outlet>
