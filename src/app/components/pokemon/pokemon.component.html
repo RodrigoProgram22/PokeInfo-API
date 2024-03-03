@@ -1,13 +1,13 @@
-<h1 class="m-5 text-danger text-center">Lista Pokémon</h1>
+<h1 class="m-5 text-danger text-center fuente-1">Lista Pokémon</h1>
 
-<div *ngIf="pokemonList" class="d-flex flex-wrap">
+<div *ngIf="pokemonList" class="d-flex flex-wrap fuente-1 px-5 mx-auto">
     <div *ngFor="let pokemon of pokemonList">
-        <div class="card mx-3 my-3" style="width: 13rem;">
-            <img *ngIf="pokemon.details?.sprites?.front_default"  [src]="pokemon.details.sprites.front_default" alt="{{ pokemon.name }}" class="card-img-top img-poke" alt="{{ pokemon.name }}">
-            <div class="card-body">
+        <div class="card mx-3 my-3">
+            <img *ngIf="pokemon.details?.sprites?.front_default"  [src]="pokemon.details.sprites.front_default" alt="{{ pokemon.name }}" class="card-img-top img-poke mx-auto" alt="{{ pokemon.name }}">
+            <div class="card-body text-light">
                 <h3>{{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}</h3>
-                <p>Altura: {{ pokemon.details?.height }}</p>
-                <p>Peso: {{ pokemon.details?.weight }}</p>
+                <!-- <p>Altura: {{ pokemon.details?.height }}</p> -->
+                <!-- <p>Peso: {{ pokemon.details?.weight }}</p> -->
                 <p>Tipo(s):</p>
                 <ul>
                     <li *ngFor="let type of pokemon.details?.types">{{ type.type.name }}</li>
