@@ -1,0 +1,45 @@
+.card {
+  width: 240px;
+  min-height: 300px;
+  background: #222121;
+  box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.18);
+  transition: border 0.5s;
+  cursor: pointer;
+}
+
+.card:hover {
+  border: #dc3545 solid;
+}
+
+/* Botton */
+.comic-button {
+  display: inline-block;
+  padding: 5px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff5252;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px #000;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.comic-button:hover {
+  background-color: #282424;
+  color: #ff5252;
+  border: 2px solid #ff5252;
+  box-shadow: 5px 5px 0px #ff5252;
+}
+
+.comic-button:active {
+  background-color: #ff5252;
+  color: #222121;
+  box-shadow: none;
+  transform: translateY(4px);
+}

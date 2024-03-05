@@ -1,2 +1,51 @@
-<h1 class="m-5 text-center text-alert fuente-1">¿QUE PREFIERES?</h1>
-
+<h1 class="mt-5 text-center text-alert fuente-1">¿QUÉ PREFIERES?</h1>
+<article class="text-center my-4">
+    <button class="comic-button fuente-1" (click)="refrestar()">Refrescar</button>
+</article>
+<div class="d-flex justify-content-center fuente-1">
+  <div class="card mx-3 my-3" *ngIf="pokemonUno" (click)="refrestar()">
+    <div class="card-body text-light">
+      <img
+        *ngIf="pokemonUno.details?.sprites?.front_default"
+        [src]="pokemonUno.details.sprites.front_default"
+        alt="{{ pokemonUno.name }}"
+        class="card-img-top img-poke mx-auto"
+        alt="{{ pokemonUno.name }}"
+      />
+      <h3>
+        {{ pokemonUno.name }}
+      </h3>
+      <!-- <p>Altura: {{ pokemon.details?.height }}</p> -->
+      <!-- <p>Peso: {{ pokemon.details?.weight }}</p> -->
+      <p>Tipo(s):</p>
+      <ul>
+        <li *ngFor="let type of pokemonUno.details?.types">
+          {{ type.type.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <h1 *ngIf="false">Que Prefieres?</h1>
+  <div class="card mx-3 my-3" *ngIf="pokemonDos"  (click)="refrestar()">
+    <div class="card-body text-light">
+      <img
+        *ngIf="pokemonDos.details?.sprites?.front_default"
+        [src]="pokemonDos.details.sprites.front_default"
+        alt="{{ pokemonDos.name }}"
+        class="card-img-top img-poke mx-auto"
+        alt="{{ pokemonUno.name }}"
+      />
+      <h3>
+        {{ pokemonDos.name }}
+      </h3>
+      <!-- <p>Altura: {{ pokemon.details?.height }}</p> -->
+      <!-- <p>Peso: {{ pokemon.details?.weight }}</p> -->
+      <p>Tipo(s):</p>
+      <ul>
+        <li *ngFor="let type of pokemonDos.details?.types">
+          {{ type.type.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
