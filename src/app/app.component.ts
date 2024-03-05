@@ -6,7 +6,8 @@ import { NavigationEnd,Event, Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  showButtonClass: boolean = true;
+  activeInicio: boolean = true;
+  activeVerTodos : boolean = false;
   constructor(private router: Router){}
   ngOnInit() {
 
@@ -14,7 +15,8 @@ export class AppComponent {
       if (event instanceof NavigationEnd) {
         const currentRoute = event.url;
         // Lógica para determinar si la clase debe aplicarse o no
-        this.showButtonClass = currentRoute === '/inicio';
+        this.activeInicio = currentRoute === '/inicio';
+        this.activeVerTodos = currentRoute === '/pokemon';
       }
     });
   }

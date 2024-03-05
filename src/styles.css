@@ -1,11 +1,14 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@font-face {
+  font-family: 'Pokemon GB';
+  src: url('assets/PokemonGb-RAeo.ttf') format('truetype');
+}
 body{
   background-color: #222121;
 }
 
+/* Ejemplo de uso de la fuente */
 .fuente-1 {
   color: white;
-  font-family: "Pixelify Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+  font-family: 'Pokemon GB', Arial, sans-serif;
 }

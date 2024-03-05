@@ -1,6 +1,10 @@
+h1{
+  font-size: 22px;
+}
 .card {
   width: 240px;
   min-height: 300px;
+  font-size: 10px;
   background: #222121;
   box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
   border-radius: 10px;
@@ -8,7 +12,9 @@
   transition: border 0.5s;
   cursor: pointer;
 }
-
+h2{
+  font-size: 15px;
+}
 .card:hover {
   border: #dc3545 solid;
 }
@@ -17,7 +23,7 @@
 .comic-button {
   display: inline-block;
   padding: 5px 20px;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: bold;
   text-align: center;
   text-decoration: none;

@@ -5,9 +5,9 @@
         <div class="card mx-3 my-3">
             <img *ngIf="pokemon.details?.sprites?.front_default"  [src]="pokemon.details.sprites.front_default" alt="{{ pokemon.name }}" class="card-img-top img-poke mx-auto" alt="{{ pokemon.name }}">
             <div class="card-body text-light">
-                <h3>{{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}</h3>
-                <!-- <p>Altura: {{ pokemon.details?.height }}</p> -->
-                <!-- <p>Peso: {{ pokemon.details?.weight }}</p> -->
+                <h2 class="text-center mb-3">
+                    {{ pokemon.name }}
+                  </h2>
                 <p>Tipo(s):</p>
                 <ul>
                     <li *ngFor="let type of pokemon.details?.types">{{ type.type.name }}</li>

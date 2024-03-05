@@ -28,6 +28,10 @@ export class PokemonComponent implements OnInit {
     for (const pokemon of this.pokemonList) {
       this.pokemonService.getPokemonDetails(pokemon.url).subscribe((details: any) => {
         pokemon.details = details;
+        if (pokemon.name) {
+          pokemon.name =
+            pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+        }
       });
     }
   }
