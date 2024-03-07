@@ -3,7 +3,9 @@
 <div *ngIf="pokemonList" class="d-flex flex-wrap fuente-1 px-5 mx-auto">
     <div *ngFor="let pokemon of pokemonList">
         <div class="card mx-3 my-3">
-            <img *ngIf="pokemon.details?.sprites?.front_default"  [src]="pokemon.details.sprites.front_default" alt="{{ pokemon.name }}" class="card-img-top img-poke mx-auto" alt="{{ pokemon.name }}">
+          <a class="mx-3" routerLink="/detalles/{{ pokemon.name}}">
+            <img *ngIf="pokemon.details?.sprites?.front_default" [src]="pokemon.details.sprites.front_default" alt="{{ pokemon.name }}" class="card-img-top img-poke mx-auto" alt="{{ pokemon.name }}">
+          </a>
             <div class="card-body text-light">
                 <h2 class="text-center mb-3">
                     {{ pokemon.name }}
@@ -13,6 +15,9 @@
                     <li *ngFor="let type of pokemon.details?.types">{{ type.type.name }}</li>
                 </ul>
             </div>
+            <footer class="text-center my-4">
+              <a class="comic-button fuente-1" routerLink="/detalles/{{ pokemon.name}}">Detalles</a>
+            </footer>
           </div>
     </div>
 </div>

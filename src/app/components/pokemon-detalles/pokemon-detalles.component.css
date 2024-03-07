@@ -1,9 +1,8 @@
-h1{
+h1 {
   font-size: 22px;
 }
 .card {
-  width: 240px;
-  min-height: 300px;
+  width: 540px;
   font-size: 10px;
   background: #222121;
   box-shadow: 0 8px 32px 0 rgba(117, 86, 86, 0.37);
@@ -12,9 +11,6 @@ h1{
   transition: border 0.5s;
   cursor: pointer;
 }
-h2{
-  font-size: 15px;
-}
-.card:hover {
-  border: #dc3545 solid;
+.card img {
+  width: 200px;
 }
