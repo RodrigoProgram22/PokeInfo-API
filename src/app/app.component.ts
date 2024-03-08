@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationEnd,Event, Router } from '@angular/router';
+import { BuscadorService } from './service/buscador.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +9,7 @@ import { NavigationEnd,Event, Router } from '@angular/router';
 export class AppComponent {
   activeInicio: boolean = true;
   activeVerTodos : boolean = false;
-  constructor(private router: Router){}
+  constructor(private router: Router, private searchService: BuscadorService){}
   ngOnInit() {
 
     this.router.events.subscribe((event: Event) => {
@@ -20,4 +21,11 @@ export class AppComponent {
       }
     });
   }
+
+  searchTerm: string = '';
+
+  onSearch() {
+    this.searchService.changeSearchTerm(this.searchTerm);
+  }
+
 }

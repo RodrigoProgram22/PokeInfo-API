@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/service/pokemon-api.service';
-
+import { BuscadorService } from 'src/app/service/buscador.service';
 @Component({
   selector: 'app-pokemon',
   templateUrl: './pokemon.component.html',
@@ -8,17 +8,20 @@ import { PokemonService } from 'src/app/service/pokemon-api.service';
 })
 export class PokemonComponent implements OnInit {
   pokemonList: any[] = [];
-
-  constructor(private pokemonService: PokemonService) { }
+  filteredPokemonList: any[] = [];
+  searchTerm: string = '';
+  constructor(private pokemonService: PokemonService, private searchService: BuscadorService) { }
 
   ngOnInit(): void {
     this.getAllPokemon();
+    this.subscribeToSearchTerm();
   }
 
   getAllPokemon() {
     this.pokemonService.getAllPokemon().subscribe((data: any) => {
       this.pokemonList = data.results;
       this.getPokemonDetails();
+      this.filteredPokemonList = this.pokemonList;
     }, error => {
       console.error('Error al obtener los datos:', error);
     });
@@ -34,5 +37,17 @@ export class PokemonComponent implements OnInit {
         }
       });
     }
+  }
+  subscribeToSearchTerm() {
+    this.searchService.currentSearchTerm.subscribe(searchTerm => {
+      this.searchTerm = searchTerm;
+      this.filterPokemon();
+    });
+  }
+
+  filterPokemon() {
+    this.filteredPokemonList = this.pokemonList.filter(pokemon =>
+      pokemon.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
   }
 }

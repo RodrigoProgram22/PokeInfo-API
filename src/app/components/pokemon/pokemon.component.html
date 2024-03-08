@@ -1,7 +1,7 @@
 <h1 class="m-5 text-center fuente-1">Lista Pokémon</h1>
 
-<div *ngIf="pokemonList" class="d-flex flex-wrap fuente-1 px-5 mx-auto">
-    <div *ngFor="let pokemon of pokemonList">
+<div *ngIf="filteredPokemonList" class="d-flex flex-wrap fuente-1 px-5 mx-auto">
+    <div *ngFor="let pokemon of filteredPokemonList">
         <div class="card mx-3 my-3">
           <a class="mx-3" routerLink="/detalles/{{ pokemon.name}}">
             <img *ngIf="pokemon.details?.sprites?.front_default" [src]="pokemon.details.sprites.front_default" alt="{{ pokemon.name }}" class="card-img-top img-poke mx-auto" alt="{{ pokemon.name }}">
@@ -22,6 +22,6 @@
     </div>
 </div>
 
-<div *ngIf="!pokemonList">
+<div *ngIf="!filteredPokemonList">
   <p>Cargando...</p>
 </div>

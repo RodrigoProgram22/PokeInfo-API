@@ -16,8 +16,8 @@
             <a class="nav-link disabled">Versus</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="input" placeholder="Buscar" type="text" />
+        <form class="d-flex" role="search" *ngIf="activeVerTodos">
+          <input class="input" type="text" name="search" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Buscar Pokémon">
         </form>
       </div>
     </div>
