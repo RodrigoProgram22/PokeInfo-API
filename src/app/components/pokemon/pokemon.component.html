@@ -1,25 +1,98 @@
 <h1 class="m-5 text-center fuente-1">Lista Pokémon</h1>
-
+<div class="d-flex flex-wrap">
+  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
+    Normal
+    <input type="checkbox" />
+    <div class="checkmark mx-1"></div>
+  </label>
+  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
+    Agua
+    <input type="checkbox" />
+    <div class="checkmark mx-1"></div>
+  </label>
+  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
+    Tierra
+    <input type="checkbox" />
+    <div class="checkmark mx-1"></div>
+  </label>
+  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
+    Fuego
+    <input type="checkbox" />
+    <div class="checkmark mx-1"></div>
+  </label>
+  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
+    Eléctrico
+    <input type="checkbox" />
+    <div class="checkmark mx-1"></div>
+  </label>
+  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
+    Planta
+    <input type="checkbox" />
+    <div class="checkmark mx-1"></div>
+  </label>
+  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
+    Lucha
+    <input type="checkbox" />
+    <div class="checkmark mx-1"></div>
+  </label>
+  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
+    Veneno
+    <input type="checkbox" />
+    <div class="checkmark mx-1"></div>
+  </label>
+  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
+    Fantasma
+    <input type="checkbox" />
+    <div class="checkmark mx-1"></div>
+  </label>
+  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
+    Lucha
+    <input type="checkbox" />
+    <div class="checkmark mx-1"></div>
+  </label>
+  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
+    Volador
+    <input type="checkbox" />
+    <div class="checkmark mx-1"></div>
+  </label>
+  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
+    Bicho
+    <input type="checkbox" />
+    <div class="checkmark mx-1"></div>
+  </label>
+</div>
 <div *ngIf="filteredPokemonList" class="d-flex flex-wrap fuente-1 px-5 mx-auto">
-    <div *ngFor="let pokemon of filteredPokemonList">
-        <div class="card mx-3 my-3">
-          <a class="mx-3" routerLink="/detalles/{{ pokemon.name}}">
-            <img *ngIf="pokemon.details?.sprites?.front_default" [src]="pokemon.details.sprites.front_default" alt="{{ pokemon.name }}" class="card-img-top img-poke mx-auto" alt="{{ pokemon.name }}">
-          </a>
-            <div class="card-body text-light">
-                <h2 class="text-center mb-3">
-                    {{ pokemon.name }}
-                  </h2>
-                <p>Tipo(s):</p>
-                <ul>
-                    <li *ngFor="let type of pokemon.details?.types">{{ type.type.name }}</li>
-                </ul>
-            </div>
-            <footer class="text-center my-4">
-              <a class="comic-button fuente-1" routerLink="/detalles/{{ pokemon.name}}">Detalles</a>
-            </footer>
-          </div>
+  <div *ngFor="let pokemon of filteredPokemonList">
+    <div class="card mx-3 my-3">
+      <a class="mx-3" routerLink="/detalles/{{ pokemon.name }}">
+        <img
+          *ngIf="pokemon.details?.sprites?.front_default"
+          [src]="pokemon.details.sprites.front_default"
+          alt="{{ pokemon.name }}"
+          class="card-img-top img-poke mx-auto"
+          alt="{{ pokemon.name }}"
+        />
+      </a>
+      <div class="card-body text-light">
+        <h2 class="text-center mb-3">
+          {{ pokemon.name }}
+        </h2>
+        <p>Tipo(s):</p>
+        <ul>
+          <li *ngFor="let type of pokemon.details?.types">
+            {{ type.type.name }}
+          </li>
+        </ul>
+      </div>
+      <footer class="text-center my-4">
+        <a
+          class="comic-button fuente-1"
+          routerLink="/detalles/{{ pokemon.name }}"
+          >Detalles</a
+        >
+      </footer>
     </div>
+  </div>
 </div>
 
 <div *ngIf="!filteredPokemonList">
