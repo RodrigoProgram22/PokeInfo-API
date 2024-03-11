@@ -2,62 +2,65 @@
 <div class="d-flex flex-wrap">
   <label class="container d-flex text-light fuente-1 align-items-center mb-3">
     Normal
-    <input type="checkbox" />
+    <input
+      type="checkbox"
+      [(ngModel)]="checkboxType['normal']"
+      (change)="onCheckboxChange('normal')"
+    />
     <div class="checkmark mx-1"></div>
   </label>
   <label class="container d-flex text-light fuente-1 align-items-center mb-3">
     Agua
-    <input type="checkbox" />
+    <input
+      type="checkbox"
+      [(ngModel)]="checkboxType['water']"
+      (change)="onCheckboxChange('water')"
+    />
     <div class="checkmark mx-1"></div>
   </label>
   <label class="container d-flex text-light fuente-1 align-items-center mb-3">
     Tierra
-    <input type="checkbox" />
+    <input
+      type="checkbox"
+      [(ngModel)]="checkboxType['ground']"
+      (change)="onCheckboxChange('ground')"
+    />
     <div class="checkmark mx-1"></div>
   </label>
   <label class="container d-flex text-light fuente-1 align-items-center mb-3">
     Fuego
-    <input type="checkbox" />
+    <input
+      type="checkbox"
+      [(ngModel)]="checkboxType['fire']"
+      (change)="onCheckboxChange('fire')"
+    />
     <div class="checkmark mx-1"></div>
   </label>
   <label class="container d-flex text-light fuente-1 align-items-center mb-3">
     Eléctrico
-    <input type="checkbox" />
+    <input
+      type="checkbox"
+      [(ngModel)]="checkboxType['electric']"
+      (change)="onCheckboxChange('electric')"
+    />
     <div class="checkmark mx-1"></div>
   </label>
   <label class="container d-flex text-light fuente-1 align-items-center mb-3">
     Planta
-    <input type="checkbox" />
-    <div class="checkmark mx-1"></div>
-  </label>
-  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
-    Lucha
-    <input type="checkbox" />
-    <div class="checkmark mx-1"></div>
-  </label>
-  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
-    Veneno
-    <input type="checkbox" />
-    <div class="checkmark mx-1"></div>
-  </label>
-  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
-    Fantasma
-    <input type="checkbox" />
-    <div class="checkmark mx-1"></div>
-  </label>
-  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
-    Lucha
-    <input type="checkbox" />
+    <input
+      type="checkbox"
+      [(ngModel)]="checkboxType['grass']"
+      (change)="onCheckboxChange('grass')"
+    />
     <div class="checkmark mx-1"></div>
   </label>
   <label class="container d-flex text-light fuente-1 align-items-center mb-3">
     Volador
-    <input type="checkbox" />
-    <div class="checkmark mx-1"></div>
-  </label>
-  <label class="container d-flex text-light fuente-1 align-items-center mb-3">
-    Bicho
-    <input type="checkbox" />
+    <input
+      type="checkbox"
+      [(ngModel)]="checkboxType['flying']"
+      (change)="onCheckboxChange('flying')"
+    />
     <div class="checkmark mx-1"></div>
   </label>
 </div>
