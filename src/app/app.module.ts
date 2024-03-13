@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PokemonDetallesComponent } from './components/pokemon-detalles/pokemon-detalles.component';
 import { FormsModule } from '@angular/forms'; 
+import { NgOptimizedImage } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule 
+    FormsModule,
+    NgOptimizedImage 
   ],
   providers: [],
   bootstrap: [AppComponent]

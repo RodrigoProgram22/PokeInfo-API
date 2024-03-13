@@ -72,8 +72,9 @@
           *ngIf="pokemon.details?.sprites?.front_default"
           [src]="pokemon.details.sprites.front_default"
           alt="{{ pokemon.name }}"
-          class="card-img-top img-poke mx-auto"
+          class="img-poke mx-auto" 
           alt="{{ pokemon.name }}"
+          loading="lazy"
         />
       </a>
       <div class="card-body text-light">
