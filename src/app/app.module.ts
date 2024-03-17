@@ -10,13 +10,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PokemonDetallesComponent } from './components/pokemon-detalles/pokemon-detalles.component';
 import { FormsModule } from '@angular/forms'; 
 import { NgOptimizedImage } from '@angular/common';
+import { VersusComponent } from './components/versus/versus.component';
 @NgModule({
   declarations: [
     AppComponent,
     PokemonComponent,
     HomeComponent,
     FooterComponent,
-    PokemonDetallesComponent
+    PokemonDetallesComponent,
+    VersusComponent
   ],
   imports: [
     BrowserModule,

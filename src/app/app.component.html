@@ -13,7 +13,10 @@
             <a class="nav-link"  [ngClass]="{'active': activeVerTodos}" routerLink="/pokemon">Ver Todos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Versus</a>
+            <a class="nav-link" [ngClass]="{'active': activeVersus}"  aria-current="page" routerLink="/versus">Versus</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" >Qué prefieres</a>
           </li>
         </ul>
         <form class="d-flex" role="search" *ngIf="activeVerTodos">
