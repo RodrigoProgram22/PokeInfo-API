@@ -4,9 +4,6 @@
     Elije quién crees que ganará en una batalla Pokémon.
   </p>
 </header>
-<article class="text-center my-4">
-  <button class="comic-button fuente-1" (click)="refrestar()">Actualizar</button>
-</article>
 <div class="d-flex justify-content-center fuente-1">
   <div
     class="card mx-3 my-3"
@@ -14,15 +11,25 @@
     tabindex="0"
     (click)="selectPoke(pokemonUno.url)"
   >
-    <div class="barra" [class.active]="barAnimationActive">
-      <p class="text-light text-center mt-3" *ngIf="barAnimationActive && pokemonGanador">
+    <div
+      class="barra"
+      [class.active]="barAnimationActive"
+      [style.background-color]="pokemonGanador ? '#43dc35' : '#dc3545'"
+    >
+      <p
+        class="text-light text-center mt-3"
+        *ngIf="barAnimationActive && pokemonGanador"
+      >
         Victoria
       </p>
-      <p class="text-light text-center mt-3" *ngIf="barAnimationActive && pokemonGanador === false">
+      <p
+        class="text-light text-center mt-3"
+        *ngIf="barAnimationActive && pokemonGanador === false"
+      >
         Derrota
       </p>
       <p class="text-light text-center mt-3" *ngIf="barAnimationActive">
-        Nivel de poder: {{pokemonUno.poder}}
+        Nivel de poder: {{ pokemonUno.poder }}
       </p>
     </div>
     <div class="card-body text-light">
@@ -50,15 +57,25 @@
     tabindex="0"
     (click)="selectPoke(pokemonDos.url)"
   >
-    <div class="barra" [class.active]="barAnimationActive">
-      <p class="text-light text-center mt-3" *ngIf="barAnimationActive && pokemonGanador === false">
+    <div
+      class="barra"
+      [class.active]="barAnimationActive"
+      [style.background-color]="!pokemonGanador ? '#43dc35' : '#dc3545'"
+    >
+      <p
+        class="text-light text-center mt-3"
+        *ngIf="barAnimationActive && pokemonGanador === false"
+      >
         Victoria
       </p>
-      <p class="text-light text-center mt-3" *ngIf="barAnimationActive && pokemonGanador">
+      <p
+        class="text-light text-center mt-3"
+        *ngIf="barAnimationActive && pokemonGanador"
+      >
         Derrota
       </p>
       <p class="text-light text-center mt-3" *ngIf="barAnimationActive">
-        Nivel de poder: {{pokemonDos.poder}}
+        Nivel de poder: {{ pokemonDos.poder }}
       </p>
     </div>
     <div class="card-body text-light">
@@ -81,7 +98,14 @@
     </div>
   </div>
 </div>
-<article class="text-center my-4">
-  <p class="text-center fuente-1 text-p" *ngIf="alertaPokemonSelect">Selecciona un Pokémon</p>
+<div class="text-center my-4">
+  <p class="text-center fuente-1 text-p" *ngIf="alertaPokemonSelect">
+    Selecciona un Pokémon
+  </p>
   <button class="comic-button fuente-1" (click)="batalla()">Batalla</button>
-</article>
+</div>
+<div class="text-center my-4">
+  <button class="comic-button fuente-1" (click)="refrestar()">
+    Actualizar
+  </button>
+</div>

@@ -1,29 +1,67 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-transparent mx-5 fuente-1">
-    <div class="container-fluid">
-      <a class="navbar-brand titulo" href="#">PokeInfo</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" [ngClass]="{'active': activeInicio}"  aria-current="page" routerLink="/inicio" >Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"  [ngClass]="{'active': activeVerTodos}" routerLink="/pokemon">Ver Todos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [ngClass]="{'active': activeVersus}"  aria-current="page" routerLink="/versus">Versus</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" >Qué prefieres</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search" *ngIf="activeVerTodos">
-          <input class="input" type="text" name="search" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Buscar Pokémon">
-        </form>
-      </div>
+  <div class="container-fluid">
+    <a class="navbar-brand titulo" href="#">PokeInfo</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [ngClass]="{ active: activeInicio }"
+            aria-current="page"
+            routerLink="/inicio"
+            >Inicio</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [ngClass]="{ active: activeVerTodos }"
+            routerLink="/pokemon"
+            >Ver Todos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link disabled"
+            [ngClass]="{ active: activeVersus }"
+            aria-current="page"
+            routerLink="/versus"
+            >Versus</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [ngClass]="{ active: activeQuePrefieres }"
+            aria-current="page"
+            routerLink="/que-prefieres"
+            >¿Qué prefieres?</a
+          >
+        </li>
+      </ul>
+      <form class="d-flex" role="search" *ngIf="activeVerTodos">
+        <input
+          class="input"
+          type="text"
+          name="search"
+          [(ngModel)]="searchTerm"
+          (input)="onSearch()"
+          placeholder="Buscar Pokémon"
+        />
+      </form>
     </div>
-  </nav>
-  <router-outlet></router-outlet>
-  <app-footer></app-footer>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

@@ -1,0 +1,46 @@
+<h1 class="mt-3 text-center fuente-1">¿QUÉ PREFIERES?</h1>
+<div class="d-flex justify-content-center fuente-1">
+  <div class="card mx-3 my-3" *ngIf="pokemonUno" (click)="refrestar()">
+    <div class="card-body text-light">
+      <img
+        *ngIf="pokemonUno.details?.sprites?.front_default"
+        [src]="pokemonUno.details.sprites.front_default"
+        alt="{{ pokemonUno.name }}"
+        class="card-img-top img-poke mx-auto"
+        alt="{{ pokemonUno.name }}"
+      />
+      <h2 class="text-center mb-3">
+        {{ pokemonUno.name }}
+      </h2>
+      <p>Tipo(s):</p>
+      <ul>
+        <li *ngFor="let type of pokemonUno.details?.types">
+          {{ type.type.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card mx-3 my-3" *ngIf="pokemonDos"  (click)="refrestar()">
+    <div class="card-body text-light">
+      <img
+        *ngIf="pokemonDos.details?.sprites?.front_default"
+        [src]="pokemonDos.details.sprites.front_default"
+        alt="{{ pokemonDos.name }}"
+        class="card-img-top img-poke mx-auto"
+        alt="{{ pokemonUno.name }}"
+      />
+      <h2 class="text-center mb-3">
+        {{ pokemonDos.name }}
+      </h2>
+      <p>Tipo(s):</p>
+      <ul>
+        <li *ngFor="let type of pokemonDos.details?.types">
+          {{ type.type.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<article class="text-center my-4">
+  <button class="comic-button fuente-1" (click)="refrestar()">Actualizar</button>
+</article>

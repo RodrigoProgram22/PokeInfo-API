@@ -11,6 +11,7 @@ import { PokemonDetallesComponent } from './components/pokemon-detalles/pokemon-
 import { FormsModule } from '@angular/forms'; 
 import { NgOptimizedImage } from '@angular/common';
 import { VersusComponent } from './components/versus/versus.component';
+import { QuePrefieresComponent } from './components/que-prefieres/que-prefieres.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { VersusComponent } from './components/versus/versus.component';
     HomeComponent,
     FooterComponent,
     PokemonDetallesComponent,
-    VersusComponent
+    VersusComponent,
+    QuePrefieresComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,8 @@ import { BuscadorService } from './service/buscador.service';
 export class AppComponent {
   activeInicio: boolean = true;
   activeVerTodos : boolean = false;
-  activeVersus : boolean = false
+  activeVersus : boolean = false;
+  activeQuePrefieres : boolean = false;
   constructor(private router: Router, private searchService: BuscadorService){}
   ngOnInit() {
 
@@ -20,6 +21,7 @@ export class AppComponent {
         this.activeInicio = currentRoute === '/inicio';
         this.activeVerTodos = currentRoute === '/pokemon';
         this.activeVersus = currentRoute === '/versus';
+        this.activeQuePrefieres = currentRoute === '/que-prefieres';
       }
     });
   }
