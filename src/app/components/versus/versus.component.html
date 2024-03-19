@@ -3,6 +3,11 @@
   <p class="text-center text-light fuente-1 text-p mx-1">
     Elije quién crees que ganará en una batalla Pokémon.
   </p>
+  <div class="d-flex justify-content-center text-light fuente-1 text-p mx-1" *ngIf="racha>0">
+    <img src="../../../assets/fire.gif" class="gif" alt="fuego" />
+    <p class="aling-items-center my-auto mx-2">Nivel de Racha : {{ racha }}</p>
+    <img src="../../../assets/fire.gif" class="gif" alt="fuego" />
+  </div>
 </header>
 <div class="d-flex justify-content-center fuente-1">
   <div
@@ -14,7 +19,13 @@
     <div
       class="barra"
       [class.active]="barAnimationActive"
-      [style.background-color]="pokemonGanador ? '#43dc35' : '#dc3545'"
+      [style.background-color]="
+        pokemonGanador === undefined
+          ? '#676061'
+          : pokemonGanador
+          ? '#43dc35'
+          : '#dc3545'
+      "
     >
       <p
         class="text-light text-center mt-3"
@@ -27,6 +38,12 @@
         *ngIf="barAnimationActive && pokemonGanador === false"
       >
         Derrota
+      </p>
+      <p
+        class="text-light text-center mt-3"
+        *ngIf="barAnimationActive && pokemonGanador === undefined"
+      >
+        Empate
       </p>
       <p class="text-light text-center mt-3" *ngIf="barAnimationActive">
         Nivel de poder: {{ pokemonUno.poder }}
@@ -60,7 +77,13 @@
     <div
       class="barra"
       [class.active]="barAnimationActive"
-      [style.background-color]="!pokemonGanador ? '#43dc35' : '#dc3545'"
+      [style.background-color]="
+        pokemonGanador === undefined
+          ? '#676061'
+          : !pokemonGanador
+          ? '#43dc35'
+          : '#dc3545'
+      "
     >
       <p
         class="text-light text-center mt-3"
@@ -73,6 +96,12 @@
         *ngIf="barAnimationActive && pokemonGanador"
       >
         Derrota
+      </p>
+      <p
+        class="text-light text-center mt-3"
+        *ngIf="barAnimationActive && pokemonGanador === undefined"
+      >
+        Empate
       </p>
       <p class="text-light text-center mt-3" *ngIf="barAnimationActive">
         Nivel de poder: {{ pokemonDos.poder }}

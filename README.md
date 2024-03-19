@@ -16,7 +16,7 @@ PokeInfo es una aplicación web simple pero poderosa que te permite explorar el 
 ------------
 ###Secciones Principales:
 ##### Versus Pokémon   ` Seccion Destacada`
-- En la sección de Versus, podrás participar en batallas Pokémon donde puedes elegir quién crees que ganará entre dos Pokémon seleccionados aleatoriamente. Después de elegir, la aplicación calculará el poder promedio de cada Pokémon y mostrará al ganador, resaltando su nombre en verde si ganó o en rojo si perdió.
+- En la sección de Versus, podrás participar en batallas Pokémon donde puedes elegir quién crees que ganará entre dos Pokémon seleccionados aleatoriamente. Después de elegir, la aplicación calculará el poder promedio de cada Pokémon y mostrará al ganador, resaltando su nombre en verde si ganó o en rojo si perdió, y en caso de empate saldrá Gris. Mientras más aciertes los Pokémons ganadores irás sumando el nivel de racha.
 
 ##### Ver Todos los Pokémon con Filtros
 - En esta sección, podrás explorar una lista completa de Pokémon y aplicar diferentes filtros para encontrar a tus favoritos más fácilmente. Puedes filtrar los Pokémon por tipo, habilidades y más.

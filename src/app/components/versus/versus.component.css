@@ -39,5 +39,10 @@ h2 {
 }
 
 .barra.active {
-  height: 27%; /* Altura de la barra al 50% de la tarjeta */
+  height: 29%; /* Altura de la barra al 50% de la tarjeta */
+}
+
+.gif{
+  width: 20px;
+  object-fit: contain;
 }

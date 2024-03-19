@@ -14,6 +14,7 @@ export class VersusComponent {
   barAnimationActive: boolean = false;
   alertaPokemonSelect: boolean = false;
   pokemonGanador: any;
+  racha: number = 0;
   constructor(private pokemonService: PokemonService) {}
 
   ngOnInit(): void {
@@ -33,6 +34,9 @@ export class VersusComponent {
         this.getPokemonDetails();
         this.pokemonUno = this.pokemonList[this.generarNumeroAleatorio()];
         this.pokemonDos = this.pokemonList[this.generarNumeroAleatorio()];
+        if (this.pokemonUno === this.pokemonDos) {
+          this.pokemonDos = this.pokemonList[this.generarNumeroAleatorio()];
+        }
       },
       (error) => {
         console.error('Error al obtener los datos:', error);
@@ -77,8 +81,26 @@ export class VersusComponent {
   batalla() {
     if (this.pokemonUno.poder > this.pokemonDos.poder) {
       this.pokemonGanador = true;
+      if (this.pokemonSelect === this.pokemonUno.url) {
+        this.racha++;
+      } else {
+        this.racha = 0;
+      }
+    } else if (this.pokemonUno.poder === this.pokemonDos.poder) {
+      this.pokemonGanador = undefined;
+      if (
+        this.pokemonSelect === this.pokemonUno.url ||
+        this.pokemonSelect === this.pokemonDos.url
+      ) {
+        this.racha++;
+      }
     } else {
       this.pokemonGanador = false;
+      if (this.pokemonSelect === this.pokemonDos.url) {
+        this.racha++;
+      } else {
+        this.racha = 0;
+      }
     }
     if (this.pokemonSelect) {
       this.barAnimationActive = true;
