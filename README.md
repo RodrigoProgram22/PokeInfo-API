@@ -34,7 +34,7 @@ PokeInfo es una aplicación web simple pero poderosa que te permite explorar el 
 
 ------------
 ### Contacto
-Si tienes alguna pregunta, sugerencia o simplemente deseas ponerte en contacto conmigo, no dudes en enviarme un correo electrónico a rodrigoprograma@gmail.com .
+Si tienes alguna pregunta, sugerencia o simplemente deseas ponerte en contacto conmigo, no dudes en enviarme un correo electrónico a rodrigoprograma22@gmail.com .
 
 #### Visita PokeInfo
 ¡Puedes visitar mi página de Pokémon para comenzar a explorar el mundo Pokémon ahora mismo!
